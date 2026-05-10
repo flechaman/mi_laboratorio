@@ -1,0 +1,8 @@
+{
+    "workbench.colorTheme": "Dark Modern",
+    "chat.viewSessions.orientation": "stacked",
+    "terminal.integrated.rightClickBehavior": "paste",
+    "terminal.integrated.copyOnSelection": true,
+    "cSpell.enable": false,
+    "explorer.confirmDelete": false
+}
