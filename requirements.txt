@@ -1,0 +1,35 @@
+# Core
+python-dotenv>=1.0.1
+requests>=2.32.0
+pydantic>=2.7.0
+typer>=0.12.0
+rich>=13.7.0
+
+# Automation and data
+pandas>=2.2.0
+openpyxl>=3.1.0
+pyyaml>=6.0.1
+
+# Azure
+azure-identity>=1.16.0
+azure-mgmt-resource>=23.0.0
+azure-storage-blob>=12.20.0
+
+# Gmail API
+google-api-python-client>=2.130.0
+google-auth>=2.29.0
+google-auth-oauthlib>=1.2.0
+
+# AI and local RAG
+openai>=1.30.0
+qdrant-client>=1.9.0
+sentence-transformers>=2.7.0
+langchain>=0.2.0
+langchain-community>=0.2.0
+
+# Observability
+prometheus-client>=0.20.0
+
+# Testing
+pytest>=8.2.0
+ruff>=0.4.0

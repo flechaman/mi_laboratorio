@@ -1,13 +1,46 @@
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 .pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
 .venv/
 venv/
+env/
+ENV/
 
-# Environment files
+# Environment and secrets
 .env
 .env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.crt
+secrets/
+credentials.json
+token.json
+
+# Docker and local runtime
+docker-data/
+volumes/
+*.log
+logs/
+
+# Data and notebooks
+data/raw/*
+data/processed/*
+!data/raw/README.md
+!data/processed/README.md
+.ipynb_checkpoints/
 
 # Editors
 .vscode/
@@ -15,9 +48,16 @@ venv/
 
 # OS files
 Thumbs.db
+Desktop.ini
 .DS_Store
+
+# PowerBI
+*.pbix
+*.pbit
+
+# Azure tooling
+.azure/
 
 # Workspace scratch files
 workspace/*
 !workspace/README.md
-

@@ -1,4 +1,5 @@
 # Workspace
 
-Area temporal de trabajo. El contenido de esta carpeta se ignora salvo este archivo.
+Area temporal para pruebas locales, archivos generados y experimentos rapidos.
 
+Git ignora todo el contenido de esta carpeta salvo este README.
