@@ -1,0 +1,37 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+
+    "AZURE_STORAGE_USE_AZURITE": "true",
+
+    "AZURE_STORAGE_ACCOUNT_NAME": "devstoreaccount1",
+
+    "AZURE_STORAGE_ACCESS_KEY": "Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==",
+
+    "AZURE_TABLE_NAME": "MetricsData",
+
+    "PG_HOST": "localhost",
+
+    "PG_DATABASE": "metricsdb",
+
+    "PG_USER": "metrics",
+
+    "PG_PASSWORD": "metrics123",
+
+    "PG_PORT": "5432",
+
+    "MANUAL_MINUTES_PER_ITEM": "15",
+
+    "HOURLY_RATE_EUROS": "30.0",
+
+    "AUTOMATION_COST_PER_ITEM": "0.1",
+
+    "AUTOMATION_FIXED_COST": "0.5",
+
+    "DATA_RETENTION_DAYS": "90"
+  }
+}

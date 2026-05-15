@@ -1,0 +1,4 @@
+azure-functions
+azure-data-tables
+pytz
+psycopg2-binary
