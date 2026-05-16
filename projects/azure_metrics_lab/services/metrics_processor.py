@@ -11,6 +11,10 @@ from services.azure_table_service import (
     AzureTableService
 )
 
+from services.postgres_service import (
+    PostgreSQLService
+)
+
 from config.settings import (
     validate_environment
 )
@@ -26,6 +30,10 @@ class MetricsProcessor:
             AzureTableService()
         )
 
+        self.postgres_service = (
+            PostgreSQLService()
+        )
+
     def process_metrics(
         self,
         input_data
@@ -39,11 +47,32 @@ class MetricsProcessor:
                 )
             )
 
+            # =====================================================
+            # AZURE TABLE
+            # =====================================================
+
             row_key = (
                 self.azure_service
                 .save_metrics(
                     final_data
                 )
+            )
+
+            # =====================================================
+            # POSTGRESQL
+            # =====================================================
+
+            self.postgres_service.save_metrics(
+
+                partition_key=
+                    final_data.get(
+                        "automation_name",
+                        "unknown"
+                    ),
+
+                row_key=row_key,
+
+                metrics_data=final_data
             )
 
             return {

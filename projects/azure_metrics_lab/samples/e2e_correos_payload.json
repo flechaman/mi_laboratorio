@@ -1,0 +1,90 @@
+{
+  "execution_id": "E2E_CORREOS_20260515_205424_c61e2af2",
+  "automation_name": "E2E_CORREOS",
+  "items_processed": 0,
+  "timestamp": "2026-05-15T20:54:24.726777+02:00",
+  "version": "2.0",
+  "description": "Universal metrics",
+  "template_version": "2.0",
+  "schema_version": "v2.0",
+  "_metadata": {
+    "version": "2.0",
+    "created_date": "2026-05-04T00:00:00Z",
+    "compatibility": [
+      "python",
+      "logic_apps",
+      "bash",
+      "powershell",
+      "java",
+      "dotnet"
+    ],
+    "embedded_mode": true
+  },
+  "_config": {
+    "manual_minutes_per_item": 15.0,
+    "hourly_rate_euros": 30.0,
+    "automation_cost_per_item": 0.1,
+    "automation_fixed_cost": 0.5,
+    "data_retention_days": 90
+  },
+  "automation_version": "2.0",
+  "environment": "local_simulation",
+  "items_success": 0,
+  "items_error": 0,
+  "processing_time_seconds": 7.8,
+  "processing_time_minutes": 0.13,
+  "manual_minutes_saved": 0.0,
+  "estimated_manual_hours_saved": 0.0,
+  "estimated_manual_cost_euros": 0.0,
+  "automation_cost_euros": 0.0,
+  "estimated_savings_euros": 0.0,
+  "status": "success",
+  "critical_errors": "none",
+  "source_system": "correo_local",
+  "target_system": "azure_table_postgresql",
+  "execution_host": "LES007351",
+  "execution_user": "local_user",
+  "python_version": "3.12",
+  "function_runtime": "Azure Functions Core Tools 4",
+  "tags": [
+    "e2e",
+    "correos",
+    "local_simulation"
+  ],
+  "metrics": {
+    "total_files": 0,
+    "successful_files": 0,
+    "failed_files": 0,
+    "duration_minutes": 0.13
+  },
+  "input_parameters": {
+    "max_workers": 1,
+    "source": "manual_test"
+  },
+  "warnings": [
+    "simulated_from_screenshot"
+  ],
+  "notes": "Simulacion local basada en captura de Azure Table laboral.",
+  "hostname": "LES007351",
+  "platform": "Windows",
+  "process_id": 8404,
+  "duration_minutes": 0.13,
+  "total_files": 0,
+  "successful_files": 0,
+  "failed_files": 0,
+  "max_workers": 1,
+  "roi_euros_saved": 0.0,
+  "roi_percentage": "0.0:1",
+  "manual_cost_euros": 0.0,
+  "additional_data": {
+    "excel_file_generated": true,
+    "csv_metrics_generated": true,
+    "source": "local_simulation"
+  },
+  "_template_info": {
+    "source": "embedded",
+    "location": "function_app.py",
+    "created_for": "azure_metrics_lab"
+  },
+  "data_retention_days": 90
+}

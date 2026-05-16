@@ -16,11 +16,11 @@
 
     "PG_HOST": "localhost",
 
-    "PG_DATABASE": "metricsdb",
+    "PG_DATABASE": "lab_db",
 
-    "PG_USER": "metrics",
+    "PG_USER": "lab_admin",
 
-    "PG_PASSWORD": "metrics123",
+    "PG_PASSWORD": "j0s3l3",
 
     "PG_PORT": "5432",
 
