@@ -21,6 +21,7 @@ ENV/
 .env
 .env.*
 !.env.example
+local.settings.json
 *.pem
 *.key
 *.pfx

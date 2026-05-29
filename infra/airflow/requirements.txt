@@ -1,0 +1,15 @@
+apache-airflow-providers-postgres>=5.8.0
+apache-airflow-providers-ssh>=3.8.1
+apache-airflow-providers-sftp>=4.8.1
+apache-airflow-providers-jira>=3.1.0
+apache-airflow-providers-oracle>=3.7.1
+
+pandas>=2.0.3
+openpyxl>=3.1.2
+pyyaml>=6.0.1
+paramiko>=3.4.0
+oracledb>=2.0.1
+jira>=3.8.0
+
+apache-airflow-providers-amazon>=8.0.0
+boto3>=1.34.0

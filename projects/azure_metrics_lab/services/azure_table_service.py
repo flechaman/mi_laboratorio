@@ -15,7 +15,8 @@ from azure.core.exceptions import (
 )
 
 from config.settings import (
-    AZURE_STORAGE_USE_AZURITE,
+    AZURE_STORAGE_CONNECTION_STRING,
+    AZUREWEBJOBS_STORAGE,
     AZURE_STORAGE_ACCOUNT_NAME,
     AZURE_STORAGE_ACCESS_KEY,
     AZURE_TABLE_NAME
@@ -26,23 +27,15 @@ class AzureTableService:
 
     def __init__(self):
 
-        if AZURE_STORAGE_USE_AZURITE:
+        connection_string = (
+            AZURE_STORAGE_CONNECTION_STRING
+        )
 
-            connection_string = (
-                "DefaultEndpointsProtocol=http;"
-                "AccountName="
-                f"{AZURE_STORAGE_ACCOUNT_NAME};"
-                "AccountKey="
-                f"{AZURE_STORAGE_ACCESS_KEY};"
-                "BlobEndpoint=http://127.0.0.1:10000/"
-                f"{AZURE_STORAGE_ACCOUNT_NAME};"
-                "QueueEndpoint=http://127.0.0.1:10001/"
-                f"{AZURE_STORAGE_ACCOUNT_NAME};"
-                "TableEndpoint=http://127.0.0.1:10002/"
-                f"{AZURE_STORAGE_ACCOUNT_NAME};"
-            )
+        if not connection_string:
 
-        else:
+            connection_string = AZUREWEBJOBS_STORAGE
+
+        if not connection_string:
 
             connection_string = (
                 f"DefaultEndpointsProtocol=https;"

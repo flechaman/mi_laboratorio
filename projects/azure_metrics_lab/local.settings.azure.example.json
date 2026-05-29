@@ -1,0 +1,26 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "<azure-functions-storage-connection-string>",
+    "FUNCTIONS_WORKER_RUNTIME": "python",
+
+    "AZURE_STORAGE_CONNECTION_STRING": "<azure-table-storage-connection-string>",
+    "AZURE_STORAGE_ACCOUNT_NAME": "<azure-storage-account-name>",
+    "AZURE_STORAGE_ACCESS_KEY": "<azure-storage-account-key>",
+    "AZURE_TABLE_NAME": "MetricsData",
+
+    "PG_HOST": "<azure-postgresql-server>.postgres.database.azure.com",
+    "PG_DATABASE": "<azure-postgresql-database>",
+    "PG_USER": "<azure-postgresql-user>",
+    "PG_PASSWORD": "<azure-postgresql-password>",
+    "PG_PORT": "5432",
+    "PG_SSLMODE": "require",
+    "PG_TABLE_NAME": "metrics_data",
+
+    "MANUAL_MINUTES_PER_ITEM": "15",
+    "HOURLY_RATE_EUROS": "30.0",
+    "AUTOMATION_COST_PER_ITEM": "0.1",
+    "AUTOMATION_FIXED_COST": "0.5",
+    "DATA_RETENTION_DAYS": "90"
+  }
+}

@@ -1,42 +1,88 @@
 import os
 
+
+def get_env(
+    *names,
+    default=None
+):
+
+    for name in names:
+
+        value = os.getenv(name)
+
+        if value not in (
+            None,
+            ""
+        ):
+            return value
+
+    return default
+
+
 # =========================================================
 # AZURE STORAGE
 # =========================================================
 
-AZURE_STORAGE_USE_AZURITE = os.getenv(
-    "AZURE_STORAGE_USE_AZURITE",
-    "true"
-).lower() == "true"
+AZURE_STORAGE_CONNECTION_STRING = get_env(
+    "AZURE_STORAGE_CONNECTION_STRING"
+)
 
-AZURE_STORAGE_ACCOUNT_NAME = os.getenv(
+AZUREWEBJOBS_STORAGE = get_env(
+    "AzureWebJobsStorage"
+)
+
+AZURE_STORAGE_ACCOUNT_NAME = get_env(
     "AZURE_STORAGE_ACCOUNT_NAME"
 )
 
-AZURE_STORAGE_ACCESS_KEY = os.getenv(
+AZURE_STORAGE_ACCESS_KEY = get_env(
     "AZURE_STORAGE_ACCESS_KEY"
 )
 
-AZURE_TABLE_NAME = os.getenv(
+AZURE_TABLE_NAME = get_env(
     "AZURE_TABLE_NAME",
-    "MetricsData"
+    default="MetricsData"
 )
 
 # =========================================================
 # POSTGRESQL
 # =========================================================
 
-PG_HOST = os.getenv("PG_HOST")
+PG_HOST = get_env(
+    "PG_HOST",
+    "PGHOST"
+)
 
-PG_DATABASE = os.getenv("PG_DATABASE")
+PG_DATABASE = get_env(
+    "PG_DATABASE",
+    "PGDATABASE"
+)
 
-PG_USER = os.getenv("PG_USER")
+PG_USER = get_env(
+    "PG_USER",
+    "PGUSER"
+)
 
-PG_PASSWORD = os.getenv("PG_PASSWORD")
+PG_PASSWORD = get_env(
+    "PG_PASSWORD",
+    "PGPASSWORD"
+)
 
-PG_PORT = os.getenv(
+PG_PORT = get_env(
     "PG_PORT",
-    "5432"
+    "PGPORT",
+    default="5432"
+)
+
+PG_SSLMODE = get_env(
+    "PG_SSLMODE",
+    "PGSSLMODE",
+    default="prefer"
+)
+
+PG_TABLE_NAME = get_env(
+    "PG_TABLE_NAME",
+    default="metrics_data"
 )
 
 # =========================================================
@@ -84,10 +130,34 @@ DATA_RETENTION_DAYS = int(
 
 def validate_environment():
 
+    has_storage_connection = (
+        AZURE_STORAGE_CONNECTION_STRING
+        or AZUREWEBJOBS_STORAGE
+    )
+
     required_vars = {
         "AZURE_TABLE_NAME":
-            AZURE_TABLE_NAME
+            AZURE_TABLE_NAME,
+        "PG_HOST":
+            PG_HOST,
+        "PG_DATABASE":
+            PG_DATABASE,
+        "PG_USER":
+            PG_USER,
+        "PG_PASSWORD":
+            PG_PASSWORD,
+        "PG_TABLE_NAME":
+            PG_TABLE_NAME
     }
+
+    if not has_storage_connection:
+
+        required_vars.update({
+            "AZURE_STORAGE_ACCOUNT_NAME":
+                AZURE_STORAGE_ACCOUNT_NAME,
+            "AZURE_STORAGE_ACCESS_KEY":
+                AZURE_STORAGE_ACCESS_KEY
+        })
 
     missing = [
         k for k, v in required_vars.items()
