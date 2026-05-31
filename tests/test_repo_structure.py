@@ -15,11 +15,31 @@ class RepoStructureTests(unittest.TestCase):
             "Makefile",
             ".pre-commit-config.yaml",
             "docs/labs.md",
+            "docs/install/README.md",
             "docs/runbooks/lab-operativa-diaria.md",
             "scripts/check-lab.sh",
         ]
 
         missing = [path for path in required if not (ROOT / path).exists()]
+
+        self.assertEqual([], missing)
+
+    def test_install_guides_exist_for_main_components(self):
+        required = [
+            "docs/install/windows-wsl.md",
+            "docs/install/git-github-ssh.md",
+            "docs/install/docker.md",
+            "docs/install/python.md",
+            "docs/install/starship.md",
+            "docs/install/airflow.md",
+            "docs/install/oracle.md",
+            "docs/install/core-stack-grafana.md",
+            "docs/install/azurite.md",
+            "docs/install/mock-api.md",
+            "docs/install/azure-metrics-lab.md",
+        ]
+
+        missing = [path for path in required if not (ROOT / path).is_file()]
 
         self.assertEqual([], missing)
 

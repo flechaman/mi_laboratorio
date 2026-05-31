@@ -60,4 +60,15 @@ for readme in README.md docs/labs.md docs/runbooks/lab-operativa-diaria.md infra
 done
 
 echo
+echo "== Guias de instalacion =="
+for guide in docs/install/README.md docs/install/docker.md docs/install/airflow.md docs/install/oracle.md docs/install/starship.md; do
+  if [[ -f "$guide" ]]; then
+    echo "ok  $guide"
+  else
+    echo "ERR falta $guide"
+    exit 1
+  fi
+done
+
+echo
 echo "Chequeo completado."

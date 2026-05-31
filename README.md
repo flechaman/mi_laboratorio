@@ -63,6 +63,12 @@ make oracle-down
 
 Indice ampliado: `docs/labs.md`.
 
+## Guias de instalacion
+
+Las guias reproducibles de instalacion y configuracion viven en `docs/install/README.md`.
+
+Incluyen entorno base, Git/SSH, Docker, Python, Starship, Airflow, Oracle, Grafana/Core Stack, Azurite, Mock API y Azure Metrics Lab.
+
 ## Calidad y limpieza
 
 Instala los hooks locales con:
