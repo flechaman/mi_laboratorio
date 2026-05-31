@@ -15,6 +15,7 @@ Al terminar deberias tener:
 - Repo clonado y sincronizado.
 - Docker y Docker Compose funcionando desde WSL.
 - Python, entorno virtual y hooks basicos preparados.
+- Visual Studio Code instalado, personalizado y sincronizado con GitHub.
 - Prompt Starship opcional para ver rama y estado Git.
 - Servicios principales arrancables con `make`.
 - Checks del laboratorio pasando con `make check` y `make test`.
@@ -117,7 +118,44 @@ docker compose version
 docker ps
 ```
 
-## 5. Preparar Python
+## 5. Instalar y restaurar Visual Studio Code
+
+Sigue la guia:
+
+```text
+docs/install/visual-studio-code.md
+```
+
+Resumen desde PowerShell:
+
+```powershell
+winget install --id Microsoft.VisualStudioCode -e
+cd E:\Github\mi_laboratorio
+powershell -ExecutionPolicy Bypass -File .\infra\vscode\restore-vscode.ps1
+```
+
+Despues abre VS Code y activa Settings Sync con GitHub:
+
+```text
+Accounts -> Turn on Settings Sync -> Sign in with GitHub
+```
+
+Verifica desde WSL:
+
+```bash
+cd /mnt/e/Github/mi_laboratorio
+code .
+```
+
+El respaldo versionado vive en:
+
+```text
+infra/vscode/
+```
+
+Incluye settings, extensiones y script de restore. No incluye tokens, sesiones ni almacenamiento interno de extensiones.
+
+## 6. Preparar Python
 
 Sigue la guia:
 
@@ -141,7 +179,7 @@ pip install pre-commit
 pre-commit install
 ```
 
-## 6. Crear archivos locales de entorno
+## 7. Crear archivos locales de entorno
 
 Los `.env` reales no viajan en Git. Se recrean desde plantillas.
 
@@ -177,7 +215,7 @@ cd ../..
 
 Edita `local.settings.json` con valores reales o de laboratorio.
 
-## 7. Configurar prompt opcional
+## 8. Configurar prompt opcional
 
 Sigue la guia:
 
@@ -192,7 +230,7 @@ No es obligatorio, pero ayuda mucho a ver:
 - Archivos sin trackear.
 - Commits pendientes de push.
 
-## 8. Validar el laboratorio base
+## 9. Validar el laboratorio base
 
 Desde la raiz del repo:
 
@@ -209,7 +247,7 @@ Ran 5 tests
 OK
 ```
 
-## 9. Levantar servicios principales
+## 10. Levantar servicios principales
 
 Airflow:
 
@@ -252,7 +290,7 @@ Acceso:
 
 - Swagger: <http://localhost:8001/docs>
 
-## 10. Validar servicios
+## 11. Validar servicios
 
 ```bash
 docker ps
@@ -268,7 +306,7 @@ docker logs lab-oracle --tail=100
 docker logs mock-api --tail=100
 ```
 
-## 11. Parar servicios
+## 12. Parar servicios
 
 ```bash
 make airflow-down
@@ -288,6 +326,8 @@ Por seguridad y limpieza, estas cosas no se guardan en el repositorio:
 | Volumenes Docker | Se regeneran al arrancar servicios. |
 | Logs | Se regeneran al ejecutar servicios. |
 | Caches Python | Se regeneran automaticamente. |
+| Sesiones de VS Code | Iniciar sesion de nuevo con GitHub/Settings Sync. |
+| Estado interno de extensiones | Se regenera al usar VS Code. |
 | Datos reales o sensibles | Restaurar desde fuente segura externa. |
 | Artefactos `*.zip` | Regenerar o compartir fuera de Git si son necesarios. |
 
@@ -297,6 +337,7 @@ Por seguridad y limpieza, estas cosas no se guardan en el repositorio:
 - Tiene clave SSH configurada en GitHub.
 - Tiene Docker Desktop funcionando con WSL.
 - Ha clonado el repo por SSH.
+- Tiene VS Code instalado, con extensiones restauradas y Settings Sync activo si aplica.
 - Ha creado los `.env` locales desde plantillas.
 - Ejecuta `make check` correctamente.
 - Ejecuta `make test` correctamente.
@@ -307,6 +348,7 @@ Por seguridad y limpieza, estas cosas no se guardan en el repositorio:
 1. `docs/install/windows-wsl.md`
 2. `docs/install/git-github-ssh.md`
 3. `docs/install/docker.md`
-4. `docs/install/python.md`
-5. `docs/install/reponer-laboratorio-desde-cero.md`
-6. Guias especificas del servicio que se quiera usar.
+4. `docs/install/visual-studio-code.md`
+5. `docs/install/python.md`
+6. `docs/install/reponer-laboratorio-desde-cero.md`
+7. Guias especificas del servicio que se quiera usar.

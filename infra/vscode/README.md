@@ -20,3 +20,17 @@ powershell -ExecutionPolicy Bypass -File .\infra\vscode\restore-vscode.ps1
 ```
 
 Si el comando `code` no existe después de instalar VS Code, abre VS Code una vez o reinstálalo marcando la opción de agregarlo al PATH.
+
+## Guia completa
+
+La guia de instalacion y sincronizacion con GitHub esta en:
+
+```text
+docs/install/visual-studio-code.md
+```
+
+Para un restore completo del laboratorio, empieza por:
+
+```text
+docs/install/reponer-laboratorio-desde-cero.md
+```

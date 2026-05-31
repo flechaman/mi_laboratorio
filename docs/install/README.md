@@ -19,6 +19,7 @@ El objetivo principal es poder **reponer el laboratorio desde cero** en un equip
 | `docker.md` | Instalar y validar Docker Desktop/Compose. |
 | `python.md` | Preparar Python, virtualenv, dependencias y pre-commit. |
 | `starship.md` | Instalar Starship y fuente Nerd Font para el prompt. |
+| `visual-studio-code.md` | Instalar VS Code, extensiones, configuracion y sincronizacion con GitHub. |
 
 ## Servicios e infraestructura
 

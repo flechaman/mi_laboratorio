@@ -25,7 +25,7 @@ La guia principal para reconstruir este laboratorio en un equipo nuevo o pasarse
 docs/install/reponer-laboratorio-desde-cero.md
 ```
 
-Esa guia cubre Windows/WSL, GitHub por SSH, Docker, Python, variables locales, servicios principales y verificacion final.
+Esa guia cubre Windows/WSL, GitHub por SSH, Docker, Visual Studio Code, Python, variables locales, servicios principales y verificacion final.
 
 ## Primeros pasos rapidos
 
@@ -81,7 +81,7 @@ Indice ampliado: `docs/labs.md`.
 
 Las guias reproducibles de instalacion y configuracion viven en `docs/install/README.md`.
 
-Empieza por `docs/install/reponer-laboratorio-desde-cero.md`. Despues usa las guias especificas de entorno base, Git/SSH, Docker, Python, Starship, Airflow, Oracle, Grafana/Core Stack, Azurite, Mock API y Azure Metrics Lab.
+Empieza por `docs/install/reponer-laboratorio-desde-cero.md`. Despues usa las guias especificas de entorno base, Git/SSH, Docker, Visual Studio Code, Python, Starship, Airflow, Oracle, Grafana/Core Stack, Azurite, Mock API y Azure Metrics Lab.
 
 ## Calidad y limpieza
 

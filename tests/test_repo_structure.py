@@ -31,6 +31,7 @@ class RepoStructureTests(unittest.TestCase):
             "docs/install/windows-wsl.md",
             "docs/install/git-github-ssh.md",
             "docs/install/docker.md",
+            "docs/install/visual-studio-code.md",
             "docs/install/python.md",
             "docs/install/starship.md",
             "docs/install/airflow.md",

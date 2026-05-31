@@ -61,7 +61,7 @@ done
 
 echo
 echo "== Guias de instalacion =="
-for guide in docs/install/README.md docs/install/reponer-laboratorio-desde-cero.md docs/install/docker.md docs/install/airflow.md docs/install/oracle.md docs/install/starship.md; do
+for guide in docs/install/README.md docs/install/reponer-laboratorio-desde-cero.md docs/install/docker.md docs/install/visual-studio-code.md docs/install/airflow.md docs/install/oracle.md docs/install/starship.md; do
   if [[ -f "$guide" ]]; then
     echo "ok  $guide"
   else
