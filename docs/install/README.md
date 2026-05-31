@@ -9,6 +9,7 @@ El objetivo principal es poder **reponer el laboratorio desde cero** en un equip
 | Guia | Uso |
 | --- | --- |
 | `reponer-laboratorio-desde-cero.md` | Checklist principal para reconstruir todo el laboratorio de principio a fin. |
+| `cobertura.md` | Matriz de cobertura para saber que componentes tienen guia. |
 
 ## Entorno base
 
@@ -26,16 +27,25 @@ El objetivo principal es poder **reponer el laboratorio desde cero** en un equip
 | Guia | Uso |
 | --- | --- |
 | `airflow.md` | Instalar y arrancar Airflow local con Docker. |
+| `postgresql.md` | Reponer PostgreSQL local usado por Core Stack, Airflow y proyectos. |
+| `minio.md` | Reponer MinIO local incluido en el stack de Airflow. |
+| `redis.md` | Reponer Redis local usado por Airflow Celery. |
 | `oracle.md` | Instalar Oracle Free local con Docker. |
 | `core-stack-grafana.md` | Instalar stack base con PostgreSQL y Grafana. |
 | `azurite.md` | Instalar Azurite para emular Azure Storage. |
+| `azure-tools.md` | Instalar herramientas Azure locales usadas por los labs. |
 
 ## Proyectos
 
 | Guia | Uso |
 | --- | --- |
 | `mock-api.md` | Arrancar Mock API con FastAPI y Docker. |
+| `api-lab.md` | Arrancar API Lab con FastAPI y Docker. |
+| `storage-lab.md` | Preparar Storage Lab con Python y Azure Blob/Azurite. |
 | `azure-metrics-lab.md` | Preparar Azure Metrics Lab con Azure Functions y PostgreSQL. |
+| `gmail-api.md` | Preparar laboratorios con Gmail API. |
+| `powerbi.md` | Preparar laboratorios PowerBI y datasets. |
+| `rag.md` | Preparar laboratorios RAG local. |
 
 ## Convenciones
 

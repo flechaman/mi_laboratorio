@@ -16,6 +16,7 @@ class RepoStructureTests(unittest.TestCase):
             ".pre-commit-config.yaml",
             "docs/labs.md",
             "docs/install/README.md",
+            "docs/install/cobertura.md",
             "docs/install/reponer-laboratorio-desde-cero.md",
             "docs/runbooks/lab-operativa-diaria.md",
             "scripts/check-lab.sh",
@@ -27,6 +28,7 @@ class RepoStructureTests(unittest.TestCase):
 
     def test_install_guides_exist_for_main_components(self):
         required = [
+            "docs/install/cobertura.md",
             "docs/install/reponer-laboratorio-desde-cero.md",
             "docs/install/windows-wsl.md",
             "docs/install/git-github-ssh.md",
@@ -35,11 +37,20 @@ class RepoStructureTests(unittest.TestCase):
             "docs/install/python.md",
             "docs/install/starship.md",
             "docs/install/airflow.md",
+            "docs/install/postgresql.md",
+            "docs/install/minio.md",
+            "docs/install/redis.md",
             "docs/install/oracle.md",
             "docs/install/core-stack-grafana.md",
             "docs/install/azurite.md",
+            "docs/install/azure-tools.md",
             "docs/install/mock-api.md",
+            "docs/install/api-lab.md",
+            "docs/install/storage-lab.md",
             "docs/install/azure-metrics-lab.md",
+            "docs/install/gmail-api.md",
+            "docs/install/powerbi.md",
+            "docs/install/rag.md",
         ]
 
         missing = [path for path in required if not (ROOT / path).is_file()]

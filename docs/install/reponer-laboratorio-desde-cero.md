@@ -247,7 +247,17 @@ Ran 5 tests
 OK
 ```
 
-## 10. Levantar servicios principales
+## 10. Cobertura de componentes
+
+Antes de levantar servicios, revisa la matriz:
+
+```text
+docs/install/cobertura.md
+```
+
+Debe existir una guia para cada pieza principal del laboratorio: PostgreSQL, Azurite, Airflow, Redis, MinIO, Oracle, Grafana, VS Code, herramientas Azure y proyectos funcionales.
+
+## 11. Levantar servicios principales
 
 Airflow:
 
@@ -290,7 +300,19 @@ Acceso:
 
 - Swagger: <http://localhost:8001/docs>
 
-## 11. Validar servicios
+Otros componentes tienen guia especifica:
+
+```text
+docs/install/postgresql.md
+docs/install/azurite.md
+docs/install/api-lab.md
+docs/install/storage-lab.md
+docs/install/gmail-api.md
+docs/install/powerbi.md
+docs/install/rag.md
+```
+
+## 12. Validar servicios
 
 ```bash
 docker ps
@@ -306,7 +328,7 @@ docker logs lab-oracle --tail=100
 docker logs mock-api --tail=100
 ```
 
-## 12. Parar servicios
+## 13. Parar servicios
 
 ```bash
 make airflow-down
