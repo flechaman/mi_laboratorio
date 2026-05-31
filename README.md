@@ -17,20 +17,34 @@ El objetivo de este repositorio es separar claramente pruebas, proyectos reutili
 | `tests/` | Pruebas automatizadas compartidas. |
 | `workspace/` | Area temporal ignorada por Git. |
 
-## Primeros pasos en Windows 11
+## Reponer el laboratorio desde cero
 
-```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-copy .env.example .env
+La guia principal para reconstruir este laboratorio en un equipo nuevo o pasarselo a un compañero es:
+
+```text
+docs/install/reponer-laboratorio-desde-cero.md
 ```
 
-Para levantar los servicios iniciales:
+Esa guia cubre Windows/WSL, GitHub por SSH, Docker, Python, variables locales, servicios principales y verificacion final.
 
-```powershell
-docker compose up -d
+## Primeros pasos rapidos
+
+```bash
+cd /mnt/e/Github/mi_laboratorio
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+make check
+make test
+```
+
+Para levantar servicios concretos:
+
+```bash
+make airflow-up
+make core-up
+make oracle-up
 ```
 
 ## Comandos utiles
@@ -67,7 +81,7 @@ Indice ampliado: `docs/labs.md`.
 
 Las guias reproducibles de instalacion y configuracion viven en `docs/install/README.md`.
 
-Incluyen entorno base, Git/SSH, Docker, Python, Starship, Airflow, Oracle, Grafana/Core Stack, Azurite, Mock API y Azure Metrics Lab.
+Empieza por `docs/install/reponer-laboratorio-desde-cero.md`. Despues usa las guias especificas de entorno base, Git/SSH, Docker, Python, Starship, Airflow, Oracle, Grafana/Core Stack, Azurite, Mock API y Azure Metrics Lab.
 
 ## Calidad y limpieza
 

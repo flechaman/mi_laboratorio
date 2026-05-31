@@ -16,6 +16,7 @@ class RepoStructureTests(unittest.TestCase):
             ".pre-commit-config.yaml",
             "docs/labs.md",
             "docs/install/README.md",
+            "docs/install/reponer-laboratorio-desde-cero.md",
             "docs/runbooks/lab-operativa-diaria.md",
             "scripts/check-lab.sh",
         ]
@@ -26,6 +27,7 @@ class RepoStructureTests(unittest.TestCase):
 
     def test_install_guides_exist_for_main_components(self):
         required = [
+            "docs/install/reponer-laboratorio-desde-cero.md",
             "docs/install/windows-wsl.md",
             "docs/install/git-github-ssh.md",
             "docs/install/docker.md",

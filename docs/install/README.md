@@ -2,6 +2,14 @@
 
 Registro reproducible de como se instalo y configuro cada elemento del laboratorio.
 
+El objetivo principal es poder **reponer el laboratorio desde cero** en un equipo nuevo o proporcionarselo a un compañero para que lo monte con el menor contexto posible.
+
+## Ruta recomendada
+
+| Guia | Uso |
+| --- | --- |
+| `reponer-laboratorio-desde-cero.md` | Checklist principal para reconstruir todo el laboratorio de principio a fin. |
+
 ## Entorno base
 
 | Guia | Uso |
@@ -34,3 +42,4 @@ Registro reproducible de como se instalo y configuro cada elemento del laborator
 - Los secretos se documentan como nombres de variables, no como valores reales.
 - Las rutas asumen WSL y este repositorio en `/mnt/e/Github/mi_laboratorio`.
 - Si cambia un compose o README operativo, revisa la guia de instalacion correspondiente.
+- La guia principal debe enlazar a las guias especificas, no duplicarlas por completo.
