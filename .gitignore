@@ -35,6 +35,7 @@ docker-data/
 volumes/
 *.log
 logs/
+artifacts/
 
 # Data and notebooks
 data/raw/*
@@ -42,6 +43,7 @@ data/processed/*
 !data/raw/README.md
 !data/processed/README.md
 .ipynb_checkpoints/
+*.zip
 
 # Editors
 .vscode/
@@ -62,3 +64,7 @@ Desktop.ini
 # Workspace scratch files
 workspace/*
 !workspace/README.md
+
+# Local scratch directories accidentally created at repo root
+/oracle/
+/oracleinit/

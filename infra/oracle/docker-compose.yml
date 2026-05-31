@@ -1,0 +1,24 @@
+services:
+  oracle-db:
+    image: container-registry.oracle.com/database/free:latest
+    container_name: lab-oracle
+    env_file:
+      - .env
+    environment:
+      ORACLE_PWD: ${ORACLE_PWD:-Oracle123}
+      ORACLE_CHARACTERSET: ${ORACLE_CHARACTERSET:-AL32UTF8}
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+      - ./init:/opt/oracle/scripts/startup
+    networks:
+      - lab-network
+
+volumes:
+  oracle-data:
+
+networks:
+  lab-network:
+    name: lab-network
