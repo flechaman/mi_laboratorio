@@ -39,6 +39,8 @@ En Linux, WSL o Git Bash puedes usar:
 
 ```bash
 make status
+make check
+make test
 make airflow-up
 make airflow-down
 make core-up
@@ -46,6 +48,20 @@ make core-down
 make oracle-up
 make oracle-down
 ```
+
+## Laboratorios activos
+
+| Lab | Estado | Tecnologia | Arranque |
+| --- | --- | --- | --- |
+| `infra/airflow` | experimental | Airflow, PostgreSQL, Redis, MinIO | `make airflow-up` |
+| `infra/core-stack` | experimental | Grafana, PostgreSQL y servicios base | `make core-up` |
+| `infra/oracle` | experimental | Oracle Free, Docker | `make oracle-up` |
+| `projects/azure_metrics_lab` | funcional | Azure Functions, Azure Table, PostgreSQL | Ver README del proyecto |
+| `projects/mock-api` | funcional | FastAPI, Docker | `docker compose -f projects/mock-api/docker-compose.yml up -d --build` |
+| `projects/storage-lab` | experimental | Azure Blob Storage, Python | Ver README del proyecto |
+| `projects/api-lab` | experimental | FastAPI, PostgreSQL, Docker | `docker compose -f projects/api-lab/docker-compose.yml up -d --build` |
+
+Indice ampliado: `docs/labs.md`.
 
 ## Calidad y limpieza
 
@@ -57,6 +73,13 @@ pre-commit install
 ```
 
 Los hooks revisan formato basico, YAML/JSON, claves privadas accidentales y archivos grandes antes de cada commit.
+
+Chequeo rapido del laboratorio:
+
+```bash
+make check
+make test
+```
 
 ## Convenciones
 

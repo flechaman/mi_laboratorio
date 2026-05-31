@@ -1,9 +1,16 @@
 SHELL := /bin/bash
+PYTHON := $(shell command -v python3 2>/dev/null || command -v python 2>/dev/null)
 
-.PHONY: status airflow-up airflow-down airflow-logs core-up core-down oracle-up oracle-down
+.PHONY: status check test airflow-up airflow-down airflow-logs core-up core-down oracle-up oracle-down
 
 status:
 	git status --short --branch
+
+check:
+	bash scripts/check-lab.sh
+
+test:
+	$(PYTHON) -m unittest discover -s tests -p "test_*.py"
 
 airflow-up:
 	docker compose -f infra/airflow/docker-compose.yml up -d
